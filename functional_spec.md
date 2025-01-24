@@ -36,4 +36,19 @@ The app solves the problem of keeping track of multiple recipes in one place, al
 5. **Return to Main Menu:**
    - After performing any action (adding, viewing, or editing), the user can return to the main menu by typing 'back' or selecting the appropriate option.
 ### Command Flow
-
+- User runs the CLI application, and the main menu appears.
+- User selects an option (1, 2, 3, or 4) from the menu.
+- If option 1 (Add Recipe) is selected:
+  - The app prompts the user for the recipe's name, ingredients, and instructions.
+  - Recipe is saved, and the user is returned to the main menu.
+- If option 2 (View Recipes) is selected:
+  - The app lists all saved recipes.
+  - The user can select a recipe to view its details.
+  - After viewing, the user is returned to the main menu.
+- If option 3 (Edit Recipe) is selected:
+  - The app lists all recipes.
+  - The user selects a recipe to edit
+  - The app prompts the user pick which attribute (name, ingredients, or instructions) to edit.
+  - Changes are made, and the user is returned to the main menu.
+- If option 4 (Exit) is selected:
+  - The app ends the program.
