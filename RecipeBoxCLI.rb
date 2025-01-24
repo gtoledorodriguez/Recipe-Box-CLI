@@ -7,6 +7,33 @@ class RecipeBoxCLI
   end
 
   #Main Menu - Everything runs here
+  def run
+    loop do
+      puts "\nRecipe Box CLI"
+      puts "1. Add Recipe"
+      puts "2. View Recipes"
+      puts "3. Edit Recipe"
+      puts "4. Exit"
+      print "Your choice (Number): "
+        choice = gets.chomp
+        if choice.to_i.between?(1, 4)
+          choice = choice.to_i
+          if choice == 1
+            add_recipe
+          elsif choice == 2
+            view_recipes
+          elsif choice == 3
+            edit_recipe
+          elsif choice == 4
+            puts "Goodbye!"
+            break
+          end
+        else
+          puts "Invalid choice. Please try again."
+        end
+    end
+  end
+
   #Add Recipes
   def add_recipe
     puts "Enter the recipe name: "
@@ -87,7 +114,7 @@ class RecipeBoxCLI
             puts "Instructions updated!"
           elsif choice == 4
             puts "Returning to main menu."
-            break
+            #break
           end
         else
           puts "Invalid choice. Please try again."
@@ -101,5 +128,6 @@ end
 
 cli = RecipeBoxCLI.new
 cli.recipes = [Recipe.new("Pasta", ["noodles", "sauce"], ["Boil Noodles", "Mix in Sauce"])]
-cli.view_recipes
-cli.edit_recipe
+#cli.view_recipes
+#cli.edit_recipe
+cli.run
