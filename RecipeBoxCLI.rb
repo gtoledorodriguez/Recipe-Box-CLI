@@ -127,7 +127,7 @@ class RecipeBoxCLI
 end
 
 cli = RecipeBoxCLI.new
-cli.recipes = [Recipe.new("Pasta", ["noodles", "sauce"], ["Boil Noodles", "Mix in Sauce"])]
+cli.recipes = [Recipe.new("Pasta", ["Noodles", "Sauce"], ["Boil Noodles", "Mix in Sauce"])]
 #cli.view_recipes
 #cli.edit_recipe
-cli.run
+#cli.run
