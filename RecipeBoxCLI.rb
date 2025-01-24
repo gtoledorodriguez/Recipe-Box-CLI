@@ -21,7 +21,7 @@ class RecipeBoxCLI
           if choice == 1
             user_add_recipe
           elsif choice == 2
-            view_recipes
+            user_view_recipes
           elsif choice == 3
             edit_recipe
           elsif choice == 4
@@ -54,6 +54,13 @@ class RecipeBoxCLI
 
   #View Recipes
   def view_recipes
+    recipes_list = ""
+    @recipes.each_with_index do |recipe, index|
+      recipes_list = recipes_list + "\n#{index+1}. #{recipe.name}"
+    end
+    return recipes_list
+  end
+  def user_view_recipes
     if @recipes.empty?
       puts "No recipes found."
       return
@@ -61,9 +68,7 @@ class RecipeBoxCLI
 
     loop do
       puts "\nRecipes:"
-      @recipes.each_with_index do |recipe, index|
-        puts "#{index+1}. #{recipe.name}"
-      end
+      puts view_recipes
       puts "Enter the number of a recipe to view, or type 'back' to return to the main menu:"
       print "Your choice: "
       input = gets.chomp
@@ -86,9 +91,7 @@ class RecipeBoxCLI
     end
     loop do
       puts "\nRecipes:"
-      @recipes.each_with_index do |recipe, index|
-        puts "#{index+1}. #{recipe.name}"
-      end
+      puts view_recipes
       puts "Enter the number of a recipe to edit, or type 'back' to return to the main menu:"
       input = gets.chomp
       if input.downcase == 'back'
@@ -110,11 +113,11 @@ class RecipeBoxCLI
             recipe.name = gets.chomp
             puts "Recipe name updated!"
           elsif choice == 2
-            puts "Enter new ingredients (comma-separated): "
+            puts "Enter all ingredients (comma-separated): "
             recipe.ingredients = gets.chomp.split(",").map(&:strip)
             puts "Ingredients updated!"
           elsif choice == 3
-            puts "Enter new instructions (comma-separated): "
+            puts "Enter all instructions (comma-separated): "
             recipe.instructions = gets.chomp.split(",").map(&:strip)
             puts "Instructions updated!"
           elsif choice == 4
@@ -131,8 +134,8 @@ class RecipeBoxCLI
   end
 end
 
-#cli = RecipeBoxCLI.new
-#cli.recipes = [Recipe.new("Pasta", ["Noodles", "Sauce"], ["Boil Noodles", "Mix in Sauce"])]
+cli = RecipeBoxCLI.new
+cli.recipes = [Recipe.new("Pasta", ["Noodles", "Sauce"], ["Boil Noodles", "Mix in Sauce"])]
 #cli.view_recipes
 #cli.edit_recipe
-#cli.run
+cli.run
