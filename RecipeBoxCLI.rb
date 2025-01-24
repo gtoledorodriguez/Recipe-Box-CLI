@@ -9,6 +9,15 @@ class RecipeBoxCLI
   #Main Menu - Everything runs here
   #Add Recipes
   def add_recipe
+    puts "Enter the recipe name: "
+    name = gets.chop
+    puts "Enter the ingredients (comma-separated): "
+    ingredients = gets.chomp.split(",").map(&:strip) #Split makes array, but map & strip makes sure no whitespaces
+    puts "Enter the instructions (comma-separated): "
+    instructions = gets.chomp.split(",").map(&:strip)
+
+    @recipes.push(Recipe.new(name, ingredients, instructions))
+    puts "Recipe '#{name}' added successfully!"
   end
   #View Recipes
   def view_recipes
@@ -17,3 +26,6 @@ class RecipeBoxCLI
   def edit_recipe
   end
 end
+
+cli = RecipeBoxCLI.new
+cli.add_recipe
