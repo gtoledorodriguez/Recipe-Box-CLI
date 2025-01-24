@@ -28,8 +28,14 @@ class RecipeBoxCLI
     end
 
     loop do
+      puts "\nRecipes:"
       @recipes.each_with_index do |recipe, index|
-        
+        puts "#{index+1}. #{recipe.name}"
+      end
+      puts "Enter the number of a recipe to view its details, or type 'back' to return to the main menu:"
+      print "Your choice: "
+      input = gets.chomp
+      
     end
   end
 
@@ -39,4 +45,6 @@ class RecipeBoxCLI
 end
 
 cli = RecipeBoxCLI.new
+cli.view_recipes
 cli.add_recipe
+cli.view_recipes
