@@ -5,4 +5,12 @@ class Recipe
     @ingredients = ingredients
     @instructions = instructions
   end
+
+  def recipe_card
+    return "
+    \nName: #{@name}
+    \nIngredients: #{@ingredients.join(', ')}
+    \nInstructions: #{@instructions.join(', ')
+    "
+  end
 end
