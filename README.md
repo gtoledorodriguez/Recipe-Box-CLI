@@ -18,6 +18,7 @@ Recipe Box CLI is a  Ruby CLI (command line interface) application that allows u
 3. Run the Recipe Box CLI app
   ```bash
   ruby RecipeBoxCLI.rb
+  
 4. Follow the on-screen instructions to:
   - Add a new recipe
   - View a list of all recipes
