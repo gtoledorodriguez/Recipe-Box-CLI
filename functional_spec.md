@@ -13,4 +13,27 @@ The app solves the problem of keeping track of multiple recipes in one place, al
 4. As a user, I want to edit an existing recipe (name, ingredients, or instructions), so that I can update the recipe whenever necessary.
 
 ### Functional Requirements
+1. **Main Menu:**
+   - Display the following options:
+     - Add Recipe
+     - View Recipes
+     - Edit Recipe
+     - Exit
+
+2. **Add Recipe:**
+   - Prompt the user for the recipe name, ingredients, and instructions.
+   - Save the recipe in the collection.
+
+3. **View Recipes:**
+   - Display a list of all recipes.
+   - Allow the user to choose a recipe to view its details (name, ingredients, and instructions).
+
+4. **Edit Recipe:**
+   - Display a list of recipes.
+   - Allow the user to select a recipe and choose which attribute to edit (name, ingredients, or instructions).
+   - Make changes based on the user's input.
+
+5. **Return to Main Menu:**
+   - After performing any action (adding, viewing, or editing), the user can return to the main menu by typing 'back' or selecting the appropriate option.
 ### Command Flow
+
