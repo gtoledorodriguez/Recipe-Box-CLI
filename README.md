@@ -13,5 +13,18 @@ Recipe Box CLI is a  Ruby CLI (command line interface) application that allows u
 ## How to Use
 1. Clone the repository either using the button under Code or through the terminal
    ```bash
-   git clone https://github.com/<username>/recipe-box-cli.git
+   git clone https://github.com/gtoledorodriguez/Recipe-Box-CLI.git
+2. Navigate to the project directory
+3. Run the Recipe Box CLI app
+  ```bash
+  ruby RecipeBoxCLI.rb
+4. Follow the on-screen instructions to:
+  - Add a new recipe
+  - View a list of all recipes
+  - View a specific recipe in detail
+  - Edit a recipe
+
+
+
+
 - Ruby version: `3.2.1`
