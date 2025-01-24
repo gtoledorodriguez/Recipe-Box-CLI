@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require './Recipe'
 
+# test_recipe.rb
 class TestRecipe < Minitest::Test
   def setup
     @recipe = Recipe.new("Pasta", ["Noodles", "Sauce"], ["Boil Noodles", "Mix in Sauce"])

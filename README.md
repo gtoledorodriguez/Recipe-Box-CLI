@@ -25,5 +25,10 @@ Recipe Box CLI is a  Ruby CLI (command line interface) application that allows u
 
 
 
+## Requirements
+- Ruby version: `3.2.1` or higher
 
-- Ruby version: `3.2.1`
+## Testing 
+   ```bash
+   ruby tests/test_recipe.rb
+   ruby tests/test_recipe_box_cli.rb
