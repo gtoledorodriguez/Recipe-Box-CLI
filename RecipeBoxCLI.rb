@@ -35,7 +35,14 @@ class RecipeBoxCLI
       puts "Enter the number of a recipe to view its details, or type 'back' to return to the main menu:"
       print "Your choice: "
       input = gets.chomp
-      
+      if input.downcase == 'back'
+        break
+      elsif input.to_i.between?(1, @recipes.length)
+        recipe = @recipes[input.to_i - 1]
+        puts recipe.recipe_card
+      else
+        puts "Invalid choice. Please try again."
+      end
     end
   end
 
