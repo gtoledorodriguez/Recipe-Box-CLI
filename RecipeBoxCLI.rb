@@ -19,9 +19,20 @@ class RecipeBoxCLI
     @recipes.push(Recipe.new(name, ingredients, instructions))
     puts "Recipe '#{name}' added successfully!"
   end
+
   #View Recipes
   def view_recipes
+    if @recipes.empty?
+      puts "No recipes found."
+      return
+    end
+
+    loop do
+      @recipes.each_with_index do |recipe, index|
+        
+    end
   end
+
   #Edit Recipes
   def edit_recipe
   end
