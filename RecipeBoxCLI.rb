@@ -19,7 +19,7 @@ class RecipeBoxCLI
         if choice.to_i.between?(1, 4)
           choice = choice.to_i
           if choice == 1
-            add_recipe
+            user_add_recipe
           elsif choice == 2
             view_recipes
           elsif choice == 3
@@ -35,7 +35,7 @@ class RecipeBoxCLI
   end
 
   #Add Recipes
-  def add_recipe
+  def user_add_recipe
     puts "Enter the recipe name: "
     name = gets.chop
     puts "Enter the ingredients (comma-separated): "
@@ -43,7 +43,12 @@ class RecipeBoxCLI
     puts "Enter the instructions (comma-separated): "
     instructions = gets.chomp.split(",").map(&:strip)
 
-    @recipes.push(Recipe.new(name, ingredients, instructions))
+    add_recipe(name, ingredients, instructions)
+  end
+
+  def add_recipe(name, ingredients, instructions)
+    recipe = Recipe.new(name, ingredients, instructions)
+    @recipes.push(recipe)
     puts "Recipe '#{name}' added successfully!"
   end
 
