@@ -48,10 +48,58 @@ class RecipeBoxCLI
 
   #Edit Recipes
   def edit_recipe
+    if @recipes.empty?
+      puts "No recipes found."
+      return
+    end
+    loop do
+      puts "\nRecipes:"
+      @recipes.each_with_index do |recipe, index|
+        puts "#{index+1}. #{recipe.name}"
+      end
+      puts "Enter the number of a recipe to edit, or type 'back' to return to the main menu:"
+      input = gets.chomp
+      if input.downcase == 'back'
+        break
+      elsif input.to_i.between?(1, @recipes.length)
+        recipe = @recipes[input.to_i - 1]
+        puts recipe.recipe_card
+        puts "Editing '#{recipe.name}'"
+        puts "1. Edit Name"
+        puts "2. Edit Ingredients"
+        puts "3. Edit Instructions"
+        puts "4. Cancel and choose different recipe"
+        print "Your choice: "
+        choice = gets.chomp
+        if choice.to_i.between?(1, 4)
+          choice = choice.to_i
+          if choice == 1
+            print "Enter new name: "
+            recipe.name = gets.chomp
+            puts "Recipe name updated!"
+          elsif choice == 2
+            puts "Enter new ingredients (comma-separated): "
+            recipe.ingredients = gets.chomp.split(",").map(&:strip)
+            puts "Ingredients updated!"
+          elsif choice == 3
+            puts "Enter new instructions (comma-separated): "
+            recipe.instructions = gets.chomp.split(",").map(&:strip)
+            puts "Instructions updated!"
+          elsif choice == 4
+            puts "Returning to main menu."
+            break
+          end
+        else
+          puts "Invalid choice. Please try again."
+        end
+      else
+        puts "Invalid choice. Please try again."
+      end
+    end
   end
 end
 
 cli = RecipeBoxCLI.new
+cli.recipes = [Recipe.new("Pasta", ["noodles", "sauce"], ["Boil Noodles", "Mix in Sauce"])]
 cli.view_recipes
-cli.add_recipe
-cli.view_recipes
+cli.edit_recipe
