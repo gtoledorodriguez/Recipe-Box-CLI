@@ -5,7 +5,11 @@ A meaningful repo name with a README.md that includes details on what your CLI a
 Recipe Box CLI is a  Ruby CLI (command line interface) application that allows users to manage a collection of recipes. Users can add new recipes, and view and edit existing recipes.
 
 ## Features
-
+- Add a new recipe with a name, ingredients, and instructions.
+- View all recipes
+- View specific recipes in detail
+- Edit existing recipes
 
 ## How to Use
+
 - Ruby version: `3.2.1`
