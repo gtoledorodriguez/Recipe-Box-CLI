@@ -32,7 +32,7 @@ class RecipeBoxCLI
       @recipes.each_with_index do |recipe, index|
         puts "#{index+1}. #{recipe.name}"
       end
-      puts "Enter the number of a recipe to view its details, or type 'back' to return to the main menu:"
+      puts "Enter the number of a recipe to view, or type 'back' to return to the main menu:"
       print "Your choice: "
       input = gets.chomp
       if input.downcase == 'back'

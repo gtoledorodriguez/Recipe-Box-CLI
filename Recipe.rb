@@ -7,10 +7,11 @@ class Recipe
   end
 
   def recipe_card
-    return "
+    card = "
     Name: #{@name}
     \nIngredients: #{@ingredients.join(', ')}
-    \nInstructions: #{@instructions.join(', ')
+    \nInstructions: #{@instructions.join(', ')}
     "
+    return card
   end
 end
