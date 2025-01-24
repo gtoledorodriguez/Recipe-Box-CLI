@@ -1,4 +1,3 @@
-A meaningful repo name with a README.md that includes details on what your CLI app does and how to use it.
 # Recipe Box CLI
 
 ## Description
